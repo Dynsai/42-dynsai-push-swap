@@ -1,5 +1,7 @@
 *This project has been created as part of the 42 curriculum by parenas-*
 
+WIP
+
 A README.md file must be provided at the root of your Git repository. Its purpose is
 to allow anyone unfamiliar with the project (peers, staff, recruiters, etc.) to quickly
 understand what the project is about, how to run it, and where to find more information
