@@ -1,28 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_main.c                                   :+:      :+:    :+:   */
+/*   push_swap_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 13:23:26 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/16 22:29:20 by parenas-         ###   ########.fr       */
+/*   Created: 2026/03/09 14:09:56 by parenas-          #+#    #+#             */
+/*   Updated: 2026/03/16 22:26:57 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	main(int argc, char **argv)
-{
-	int	i;
-	int	j;
-	char	**tmp;
 
-	i = 0;
-	if (argc >= 2)
-		*tmp[]
-		;
-	else
-		wirte (1, "\n", 1);
-	return (0);
-}

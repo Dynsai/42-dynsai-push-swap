@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:23:18 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/09 14:50:35 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/16 22:26:48 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-//main functions of libft
-
+//utils
 int		ft_atol(const char *nptr);
 char	**ft_split(char const *s, char c);
 void	integer_checker(long l);
-
+void	ft_error();
+int	ft_strlen(char	*s);
 
 //Lists
-
 typedef struct s_list
 {
 	void			*content;

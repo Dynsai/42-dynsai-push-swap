@@ -6,11 +6,15 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:46:25 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/09 14:49:18 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/16 22:27:20 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
+
+long	ft_atol(const char *nptr);
+void	ft_error();
+int	ft_strlen(char	*s);
 
 long	ft_atol(const char *nptr)
 {
@@ -36,4 +40,19 @@ long	ft_atol(const char *nptr)
 	}
 	integer_checker(res * sig);
 	return (res * sig);
+}
+
+void	ft_error()
+{
+	write (1, "Error\n", 6);
+}
+
+int	ft_strlen(char	*s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

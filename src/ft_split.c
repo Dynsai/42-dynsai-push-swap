@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils1.c                                 :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:05:36 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/09 14:46:17 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/16 22:27:31 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
+char	**ft_split(char const *s, char c);
 static char	*fill_word(const char *str, int start, int end);
 static int	count_words(char const *str, char c);
 static void	*free_everything(char **strs, int count);
