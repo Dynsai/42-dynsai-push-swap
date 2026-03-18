@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:23:18 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/16 22:26:48 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/18 17:16:18 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,31 @@
 # include <unistd.h>
 
 //utils
-int		ft_atol(const char *nptr);
+long	ft_atol(const char *nptr);
 char	**ft_split(char const *s, char c);
 void	integer_checker(long l);
 void	ft_error();
-int	ft_strlen(char	*s);
+int		ft_strlen(const char *s);
+int		is_valid_number(char *s);
 
 //Lists
-typedef struct s_list
+typedef struct s_stack
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	int				value;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}					t_stack;
 
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *node);
-void	ft_lstadd_back(t_list **lst, t_list *node);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
+t_stack	*ft_lstnew(int content);
+void	ft_lstadd_front(t_stack **lst, t_stack *node);
+void	ft_lstadd_back(t_stack **lst, t_stack *node);
+int		ft_lstsize(t_stack *lst);
+t_stack	*ft_lstlast(t_stack *lst);
+void	free_stack(t_stack *lst);
+void	print_stack(t_stack *stack);
+
+//Parsing
+t_stack	*parse_input(int argc, char **argv);
+int		check_duplicates(t_stack *stack);
 
 #endif

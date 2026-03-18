@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_main.c                                   :+:      :+:    :+:   */
+/*   push_swap_list_utils2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 13:23:26 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/18 17:16:18 by parenas-         ###   ########.fr       */
+/*   Created: 2026/03/18 16:13:54 by parenas-          #+#    #+#             */
+/*   Updated: 2026/03/18 16:58:27 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	free_stack(t_stack *stack)
 {
-	t_stack	*a;
-	//t_stack	*b;
-
-	//b = NULL;
-	if (argc < 2)
-		return (0);
-	if (argc >= 2)
-		a = parse_input(argc, argv);
-	else
-		ft_error();
+	t_stack	*tmp;
 	
-	
-	print_stack(a);
-	free_stack(a);
-	return (0);
+	while (stack)
+	{
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
+	}
 }

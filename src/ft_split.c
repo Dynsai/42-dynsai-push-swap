@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:05:36 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/16 22:27:31 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/18 16:58:27 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	**ft_split(char const *s, char c);
 static char	*fill_word(const char *str, int start, int end);
 static int	count_words(char const *str, char c);
 static void	*free_everything(char **strs, int count);
-static void	initiate_vars(size_t *i, int *j, int *start_word);
+static void	initiate_vars(int *i, int *j, int *start_word);
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
+	int		i;
 	char	**res;
 	int		j;
 	int		start_word;
@@ -47,7 +47,7 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-static void	initiate_vars(size_t *i, int *j, int *start_word)
+static void	initiate_vars(int *i, int *j, int *start_word)
 {
 	*i = 0;
 	*j = 0;
