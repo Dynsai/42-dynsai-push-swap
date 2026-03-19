@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:46:25 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/18 17:06:04 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:22:54 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ long	ft_atol(const char *nptr);
 void	ft_error();
 int		ft_strlen(const char *s);
 int		is_valid_number(char *s);
-void	integer_checker(long l);
+static int	integer_checker(long l);
 
 long	ft_atol(const char *nptr)
 {
@@ -41,7 +41,6 @@ long	ft_atol(const char *nptr)
 		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
-	integer_checker(res * sig);
 	return (res * sig);
 }
 
@@ -65,6 +64,7 @@ int	ft_strlen(const char *s)
 int	is_valid_number(char *s)
 {
 	int	i;
+	long num;
 
 	i = 0;
 	if (s[i] == '-' || s[i] == '+')
@@ -75,15 +75,18 @@ int	is_valid_number(char *s)
 			return (0);
 		i++;
 	}
+	num = atol(s);
+	if (!(integer_checker(num)))
+		return (0);
 	return (1);
 }
 
-void	integer_checker(long l)
+static int integer_checker(long l)
 {
 	if (!(l <= INT_MAX && l >= INT_MIN))
-	{
-		ft_error();
-	}
+		return (0);
+	else
+		return (1);
 }
 
 void	print_stack(t_stack *stack)

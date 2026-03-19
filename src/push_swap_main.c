@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:23:26 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/18 17:16:18 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:04:36 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 		a = parse_input(argc, argv);
 	else
 		ft_error();
-	
 	
 	print_stack(a);
 	free_stack(a);

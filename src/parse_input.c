@@ -6,12 +6,13 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:54:28 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/18 16:58:27 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:14:13 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+t_stack	*parse_input(int argc, char **argv);
 static void	parse_string(char *argv, t_stack **stack);
 
 t_stack	*parse_input(int argc, char **argv)
@@ -50,8 +51,6 @@ static void	parse_string(char *argv, t_stack **stack)
 			ft_error();
 		}
 		node = ft_lstnew((int)ft_atol(numbers[i]));
-		if (!node)
-			ft_error();
 		ft_lstadd_back(stack, node);
 		free(numbers[i]);
 		i++;

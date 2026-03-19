@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:23:18 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/18 17:16:18 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:12:06 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 //utils
 long	ft_atol(const char *nptr);
 char	**ft_split(char const *s, char c);
-void	integer_checker(long l);
 void	ft_error();
 int		ft_strlen(const char *s);
 int		is_valid_number(char *s);
