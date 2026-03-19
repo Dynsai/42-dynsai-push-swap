@@ -64,6 +64,10 @@ v10: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
 	./$(NAME) $(shell bash -c "for i in {1..10}; do od -An -N4 -tu4 /dev/urandom | tr -d ' ' | awk '{print \$$1 % 4294967296 - 2147483648}'; done | tr '\n' ' '")
 
+v100: $(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
+	./$(NAME) $(shell bash -c "for i in {1..100}; do od -An -N4 -tu4 /dev/urandom | tr -d ' ' | awk '{print \$$1 % 4294967296 - 2147483648}'; done | tr '\n' ' '")
+
 vletters: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
 	./$(NAME) 42 abc 7 hello 3
@@ -80,6 +84,9 @@ vtotal: $(NAME)
 	-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
 	./$(NAME) $(shell bash -c "for i in {1..10}; do od -An -N4 -tu4 /dev/urandom | tr -d ' ' | awk '{print \$$1 % 4294967296 - 2147483648}'; done | tr '\n' ' '") \
 	2>&1 | grep -A4 "HEAP SUMMARY"
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
+	./$(NAME) $(shell bash -c "for i in {1..100}; do od -An -N4 -tu4 /dev/urandom | tr -d ' ' | awk '{print \$$1 % 4294967296 - 2147483648}'; done | tr '\n' ' '")
+	2>&1 | grep -A4 "HEAP SUMMARY"
 	-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
 	./$(NAME) 42 abc 7 hello 3 \
 	2>&1 | grep -A4 "HEAP SUMMARY"
@@ -90,4 +97,4 @@ vtotal: $(NAME)
 	./$(NAME) 1 22 3 "4 551 6 51 81996 26587 173" 67 \
 	2>&1 | grep -A4 "HEAP SUMMARY"
 
-.PHONY: all clean fclean re test3 test5 test100 test500 v10 vletters vspaces vnmixed vtotal
+.PHONY: all clean fclean re test3 test5 test100 test500 v10 v100 vletters vspaces vnmixed vtotal
