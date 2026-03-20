@@ -6,17 +6,18 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:46:25 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/19 15:44:31 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 13:21:59 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_error();
+void	ft_error(void);
 int		ft_strlen(const char *s);
-void	print_stack(t_stack *stack); //BORRAR ESTA FUNCION
+//BORRAR ESTA FUNCION
+void	print_stack(t_stack *stack);
 
-void	ft_error()
+void	ft_error(void)
 {
 	write (1, "Error", 5);
 	write (1, "\n", 1);

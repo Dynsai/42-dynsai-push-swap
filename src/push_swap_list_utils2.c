@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 16:13:54 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/19 12:47:32 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 13:29:19 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	free_stack(t_stack *stack)
 {
 	t_stack	*tmp;
-	
+
 	while (stack)
 	{
 		tmp = stack->next;

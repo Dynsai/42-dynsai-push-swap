@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack_utils1.c                            :+:      :+:    :+:   */
+/*   push_swap_list_utils1.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:09:56 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/16 22:28:09 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 13:21:17 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *node);
 void	ft_lstadd_front(t_stack **lst, t_stack *node);
 t_stack	*ft_lstnew(int content);
 t_stack	*ft_lstlast(t_stack *lst);
-int	ft_lstsize(t_stack *lst);
+int		ft_lstsize(t_stack *lst);
 
 /*
 add the node ’node’ to the end of the stack ’lst’.

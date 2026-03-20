@@ -6,7 +6,7 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 13:23:18 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/19 15:57:29 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:30:09 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@
 //BORRAR ESTE INCLUDE
 # include <stdio.h>
 
-//utils
-long	ft_atol(const char *nptr);
-char	**ft_split(char const *s, char c);
-void	ft_error();
-int		ft_strlen(const char *s);
-int		is_valid_number(char *s, long *num);
-
 //Lists
 typedef struct s_stack
 {
@@ -36,6 +29,11 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
+//utils
+int		ft_strlen(const char *s);
+void	ft_error(void);
+
+//Lists
 t_stack	*ft_lstnew(int content);
 void	ft_lstadd_front(t_stack **lst, t_stack *node);
 void	ft_lstadd_back(t_stack **lst, t_stack *node);
@@ -45,7 +43,9 @@ void	free_stack(t_stack *lst);
 void	print_stack(t_stack *stack);
 
 //Parsing
+char	**ft_split(char const *s, char c);
 t_stack	*parse_input(int argc, char **argv);
-int		check_duplicates(t_stack *stack);
+int		is_valid_number(char *s, long *num);
+int		is_duplicated(t_stack *stack);
 
 #endif

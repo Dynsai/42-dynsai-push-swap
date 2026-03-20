@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils2.c                                 :+:      :+:    :+:   */
+/*   push_swap_parse_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:42:35 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/19 15:59:54 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:31:10 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-long	ft_atol(const char *nptr);
-int	is_valid_number(char *s, long *num);
+static long		ft_atol(const char *nptr);
+int			is_valid_number(char *s, long *num);
 static int	integer_checker(long l);
-static int ascii_number_checker(char *s);
+static int	ascii_number_checker(char *s);
+int			is_duplicated(t_stack *stack);
 
-long	ft_atol(const char *nptr)
+static long	ft_atol(const char *nptr)
 {
 	int		i;
 	int		sig;
@@ -46,13 +47,13 @@ int	is_valid_number(char *s, long *num)
 {
 	if (!(ascii_number_checker(s)))
 		return (0);
-	*num = atol(s);
+	*num = ft_atol(s);
 	if (!(integer_checker(*num)))
 		return (0);
 	return (1);
 }
 
-static int ascii_number_checker(char *s)
+static int	ascii_number_checker(char *s)
 {
 	int	i;
 
@@ -68,7 +69,7 @@ static int ascii_number_checker(char *s)
 	return (1);
 }
 
-static int integer_checker(long l)
+static int	integer_checker(long l)
 {
 	if (!(l <= INT_MAX && l >= INT_MIN))
 		return (0);
@@ -76,3 +77,22 @@ static int integer_checker(long l)
 		return (1);
 }
 
+int	is_duplicated(t_stack	*stack)
+{
+	t_stack	*i;
+	t_stack	*j;
+
+	i = stack;
+	while (i != NULL)
+	{
+		j = i->next;
+		while (j != NULL)
+		{
+			if (j->value == i->value)
+				return (1);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (0);
+}

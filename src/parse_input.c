@@ -6,19 +6,19 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:54:28 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/19 15:58:33 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:03:41 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_stack	*parse_input(int argc, char **argv);
+t_stack		*parse_input(int argc, char **argv);
 static void	parse_string(char *argv, t_stack **stack);
 
 t_stack	*parse_input(int argc, char **argv)
 {
-	int	i;
-	t_stack *stack;
+	int		i;
+	t_stack	*stack;
 
 	i = 1;
 	stack = NULL;
@@ -27,13 +27,18 @@ t_stack	*parse_input(int argc, char **argv)
 		parse_string(argv[i], &stack);
 		i++;
 	}
+	if (is_duplicated(stack))
+	{
+		free_stack(stack);
+		ft_error();
+	}
 	return (stack);
 }
 
 static void	parse_string(char *argv, t_stack **stack)
 {
 	char	**numbers;
-	t_stack *node;
+	t_stack	*node;
 	int		i;
 	long	num;
 

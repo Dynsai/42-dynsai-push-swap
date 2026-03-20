@@ -6,13 +6,13 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:05:36 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/18 16:58:27 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 13:17:48 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-char	**ft_split(char const *s, char c);
+char		**ft_split(char const *s, char c);
 static char	*fill_word(const char *str, int start, int end);
 static int	count_words(char const *str, char c);
 static void	*free_everything(char **strs, int count);
