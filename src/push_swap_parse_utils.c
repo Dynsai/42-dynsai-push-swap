@@ -6,17 +6,17 @@
 /*   By: parenas- <parenas-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 15:42:35 by parenas-          #+#    #+#             */
-/*   Updated: 2026/03/20 15:31:10 by parenas-         ###   ########.fr       */
+/*   Updated: 2026/03/20 16:55:39 by parenas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 static long		ft_atol(const char *nptr);
-int			is_valid_number(char *s, long *num);
-static int	integer_checker(long l);
-static int	ascii_number_checker(char *s);
-int			is_duplicated(t_stack *stack);
+int				is_valid_number(char *s, long *num);
+static int		integer_checker(long l);
+static int		ascii_number_checker(char *s);
+int				is_duplicated(t_stack *stack);
 
 static long	ft_atol(const char *nptr)
 {
